@@ -6,6 +6,68 @@ import heroIllustration from "@/assets/undraw-mobile-user.svg";
 
 export const Route = createFileRoute("/")({
   component: Index,
+  head: () => ({
+    links: [{ rel: "canonical", href: "https://perspikapps.fr/" }],
+    meta: [
+      { property: "og:url", content: "https://perspikapps.fr/" },
+    ],
+    scripts: [
+      {
+        type: "application/ld+json",
+        children: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "Organization",
+          name: "Perspikapps",
+          url: "https://perspikapps.fr/",
+          logo: "https://perspikapps.fr/favicon.svg",
+          description:
+            "Software development studio building Taskadabra, Deskale and SynoPkgHub, and open-sourcing the deployment tooling behind them.",
+          parentOrganization: { "@type": "Organization", name: "Alaudida", url: "https://alaudida.fr" },
+        }),
+      },
+      {
+        type: "application/ld+json",
+        children: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "WebSite",
+          name: "Perspikapps",
+          url: "https://perspikapps.fr/",
+          description:
+            "Pragmatic solutions for platforms that ship — Taskadabra, Deskale, SynoPkgHub.",
+        }),
+      },
+      {
+        type: "application/ld+json",
+        children: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "ItemList",
+          itemListElement: [
+            {
+              "@type": "SoftwareApplication",
+              name: "Taskadabra",
+              applicationCategory: "BusinessApplication",
+              description: "Human-first, pragmatic workflow management — stop reinventing the wheel.",
+              operatingSystem: "Web",
+            },
+            {
+              "@type": "SoftwareApplication",
+              name: "Deskale",
+              applicationCategory: "DeveloperApplication",
+              description: "Sovereign edge-to-private-cloud platform for operational autonomy.",
+              operatingSystem: "Linux",
+            },
+            {
+              "@type": "SoftwareApplication",
+              name: "SynoPkgHub",
+              applicationCategory: "DeveloperApplication",
+              description: "GitHub-to-Synology package repository, built with CI/CD in mind.",
+              operatingSystem: "Synology DSM",
+            },
+          ].map((item, i) => ({ "@type": "ListItem", position: i + 1, item })),
+        }),
+      },
+    ],
+  }),
 });
 
 type Tone = "success" | "info" | "warning";
@@ -126,9 +188,9 @@ function OpenSource() {
               key={r.name}
               className="rounded-lg border border-[var(--border-subtle)] bg-card p-6 shadow-xs transition-all duration-200 hover:-translate-y-0.5 hover:shadow-md"
             >
-              <h4 className="mb-2 font-mono text-[1.125rem] font-semibold text-[var(--text-heading)]">
+              <h3 className="mb-2 font-mono text-[1.125rem] font-semibold text-[var(--text-heading)]">
                 {r.name}
-              </h4>
+              </h3>
               <p className="mb-4 text-sm text-[var(--text-muted)]">{r.desc}</p>
               <div className="flex flex-wrap gap-2">
                 {r.tags.map((t) => (
