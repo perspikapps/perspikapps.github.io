@@ -1,0 +1,7 @@
+# Perspikapps
+
+> Perspikapps is a software development studio building Taskadabra, Deskale, and SynoPkgHub, and open-sourcing the deployment tooling behind them.
+
+## Pages
+
+- [Home](/): Studio overview, platforms, open-source projects, and contact.
