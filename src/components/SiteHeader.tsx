@@ -18,9 +18,9 @@ export function SiteHeader() {
         <nav className="hidden items-center gap-8 md:flex">
           {nav.map((item) => (
             <a
-              key={item.href}
+              key={item.label}
               href={item.href}
-              className="text-sm font-semibold text-[var(--text-body)] transition-colors hover:text-[var(--brand-primary)]"
+              className={`text-sm font-semibold transition-colors hover:text-[var(--brand-primary)] ${item.active ? "text-[var(--brand-primary)]" : "text-[var(--text-body)]"}`}
             >
               {item.label}
             </a>
