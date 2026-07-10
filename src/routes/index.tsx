@@ -239,16 +239,21 @@ function Contact() {
         <h2 className="mb-3 font-display text-3xl text-[var(--text-on-brand)] md:text-[2.2rem]">
           Let's build something.
         </h2>
-        <p className="mb-8 text-white/70">
+        <p className="mb-8 text-white/90">
           Tell us about your platform and we'll get back within a day.
         </p>
         <form
           onSubmit={(e) => e.preventDefault()}
           className="flex flex-col gap-3 rounded-lg bg-card p-4 shadow-md sm:flex-row"
         >
+          <label htmlFor="contact-email" className="sr-only">
+            Email address
+          </label>
           <input
+            id="contact-email"
             type="email"
             required
+            aria-label="Email address"
             placeholder="you@company.com"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
