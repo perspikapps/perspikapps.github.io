@@ -1,7 +1,6 @@
 import logoText from "@/assets/logo-text.svg";
 
 const nav = [
-  { href: "#", label: "Home", active: true },
   { href: "#platforms", label: "Platforms" },
   { href: "#open-source", label: "Open Source" },
   { href: "#about", label: "About" },
@@ -18,9 +17,9 @@ export function SiteHeader() {
         <nav className="hidden items-center gap-8 md:flex">
           {nav.map((item) => (
             <a
-              key={item.label}
+              key={item.href}
               href={item.href}
-              className={`text-sm font-semibold transition-colors hover:text-[var(--brand-primary)] ${item.active ? "text-[var(--brand-primary)]" : "text-[var(--text-body)]"}`}
+              className="text-sm font-semibold text-[var(--text-body)] transition-colors hover:text-[var(--brand-primary)]"
             >
               {item.label}
             </a>
