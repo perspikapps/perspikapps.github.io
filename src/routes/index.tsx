@@ -57,7 +57,7 @@ function Hero() {
           Pragmatic solutions for platforms that ship.
         </h1>
         <p className="mb-8 max-w-[480px] text-[1.125rem] leading-[1.55] text-[var(--text-body)]">
-          Perspikapps designs, builds and operates Taskadabra, Deskale and SynopkgHub — and
+          Perspikapps designs, builds and operates Taskadabra, Deskale and SynoPkgHub — and
           open-sources the deployment tooling that keeps them running.
         </p>
         <div className="flex flex-wrap gap-3.5">
