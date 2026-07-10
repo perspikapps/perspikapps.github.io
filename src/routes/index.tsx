@@ -35,9 +35,9 @@ function Tag({ children }: { children: React.ReactNode }) {
 }
 
 const platforms: { name: string; desc: string; status: string; tone: Tone }[] = [
-  { name: "Taskadabra", desc: "Human-first, pragmatic workflow management.", status: "Live", tone: "success" },
+  { name: "Taskadabra", desc: "Human-first, pragmatic workflow management — stop reinventing the wheel.", status: "Live", tone: "success" },
   { name: "Deskale", desc: "Sovereign edge-to-private-cloud platform for operational autonomy.", status: "Live", tone: "success" },
-  { name: "SynoPkgHub", desc: "A GitHub-to-Synology package repository for DSM.", status: "Beta", tone: "info" },
+  { name: "SynoPkgHub", desc: "GitHub-to-Synology package repository, built with CI/CD in mind.", status: "Beta", tone: "info" },
 ];
 
 const repos = [
