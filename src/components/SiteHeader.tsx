@@ -1,6 +1,7 @@
 import logoText from "@/assets/logo-text.svg";
 
 const nav = [
+  { href: "#", label: "Home", active: true },
   { href: "#platforms", label: "Platforms" },
   { href: "#open-source", label: "Open Source" },
   { href: "#about", label: "About" },
