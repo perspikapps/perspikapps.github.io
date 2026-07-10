@@ -37,7 +37,7 @@ function Tag({ children }: { children: React.ReactNode }) {
 const platforms: { name: string; desc: string; status: string; tone: Tone }[] = [
   { name: "Taskadabra", desc: "Task & project tracking for distributed teams.", status: "Live", tone: "success" },
   { name: "Deskale", desc: "Desk and resource scheduling for hybrid offices.", status: "Live", tone: "success" },
-  { name: "SynopkgHub", desc: "Package registry & sync hub for internal tooling.", status: "Beta", tone: "info" },
+  { name: "SynoPkgHub", desc: "A GitHub-to-Synology package repository for DSM.", status: "Beta", tone: "info" },
 ];
 
 const repos = [
@@ -57,7 +57,7 @@ function Hero() {
           Pragmatic solutions for platforms that ship.
         </h1>
         <p className="mb-8 max-w-[480px] text-[1.125rem] leading-[1.55] text-[var(--text-body)]">
-          Perspikapps designs, builds and operates Taskadabra, Deskale and SynopkgHub — and
+          Perspikapps designs, builds and operates Taskadabra, Deskale and SynoPkgHub — and
           open-sources the deployment tooling that keeps them running.
         </p>
         <div className="flex flex-wrap gap-3.5">

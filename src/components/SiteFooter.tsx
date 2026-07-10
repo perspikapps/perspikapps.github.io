@@ -3,7 +3,7 @@ import logoMark from "@/assets/logo-mark.svg";
 import alaudidaBird from "@/assets/alaudida-bird-mark.png";
 
 const cols = [
-  { title: "Platforms", links: ["Taskadabra", "Deskale", "SynopkgHub"] },
+  { title: "Platforms", links: ["Taskadabra", "Deskale", "SynoPkgHub"] },
   { title: "Open Source", links: ["klick-deploy", "laravel-envribbon", "php-easy-deployer"] },
   { title: "Company", links: ["About", "Contact", "Careers"] },
 ];
@@ -15,7 +15,7 @@ const socials = [
   { name: "youtube", label: "YouTube" },
 ] as const;
 
-const words = ["France", "remotely"];
+const words = ["in Tours", "in Bristol", "on the train", "in parallel"];
 
 export function SiteFooter() {
   const [wordIndex, setWordIndex] = useState(0);
