@@ -15,7 +15,7 @@ const socials = [
   { name: "youtube", label: "YouTube" },
 ] as const;
 
-const words = ["Tours", "Bristol", "on the train", "in parallel"];
+const words = ["in Tours", "in Bristol", "on the train", "in parallel"];
 
 export function SiteFooter() {
   const [wordIndex, setWordIndex] = useState(0);
