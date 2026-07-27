@@ -3,17 +3,17 @@ import { Link } from "@tanstack/react-router";
 import logoMark from "@/assets/logo-mark.svg";
 import alaudidaBird from "@/assets/alaudida-bird-mark.png";
 
-const legalLinks = [
-  { to: "/mentions-legales", label: "Mentions légales" },
-  { to: "/politique-de-confidentialite", label: "Confidentialité" },
-  { to: "/politique-cookies", label: "Cookies" },
-] as const;
-
 const cols = [
   { title: "Platforms", links: ["Taskadabra", "Deskale", "SynoPkgHub"] },
   { title: "Open Source", links: ["klick-deploy", "laravel-envribbon", "php-easy-deployer"] },
   { title: "Company", links: ["About", "Contact", "Careers"] },
 ];
+
+const legalLinks = [
+  { to: "/mentions-legales", label: "Mentions légales" },
+  { to: "/politique-de-confidentialite", label: "Confidentialité" },
+  { to: "/politique-cookies", label: "Cookies" },
+] as const;
 
 const socials = [
   { name: "facebook", label: "Facebook" },
@@ -79,21 +79,7 @@ export function SiteFooter() {
           ))}
         </div>
 
-        <div className="mt-6 flex flex-wrap justify-center gap-x-5 gap-y-2 border-t border-white/10 pt-5 text-xs text-white/60">
-          {legalLinks.map((l) => (
-            <Link key={l.to} to={l.to} className="transition-colors hover:text-white">
-              {l.label}
-            </Link>
-          ))}
-          <span className="text-white/40">© {new Date().getFullYear()} Perspikapps</span>
-        </div>
-      </div>
-    </footer>
-  );
-}
-
-// preserve legacy trailing brace balance
-const _keep = () => {
+        <div className="flex flex-wrap items-center justify-between gap-4 border-t border-white/10 pt-5">
           <div className="flex flex-wrap items-center gap-3">
             <a
               href="https://alaudida.fr"
@@ -140,6 +126,15 @@ const _keep = () => {
               </svg>
             </a>
           </div>
+        </div>
+
+        <div className="mt-6 flex flex-wrap items-center justify-center gap-x-5 gap-y-2 border-t border-white/10 pt-5 text-xs text-white/60">
+          {legalLinks.map((l) => (
+            <Link key={l.to} to={l.to} className="transition-colors hover:text-white">
+              {l.label}
+            </Link>
+          ))}
+          <span className="text-white/40">© {new Date().getFullYear()} Perspikapps</span>
         </div>
       </div>
     </footer>
