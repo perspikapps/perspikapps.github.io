@@ -22,36 +22,44 @@ function MentionsLegales() {
 
       <h2>Éditeur du site</h2>
       <p>
-        Le site <strong>perspikapps.fr</strong> est édité par <strong>Perspikapps</strong>, studio de
-        développement logiciel, projet porté par Alaudida.
+        Le site <strong>perspikapps.fr</strong> est édité par <strong>ALAUDIDA</strong>, société par
+        actions simplifiée (SAS) au capital de 1 000 €.
         <br />
-        Adresse : [À compléter]
+        Siège social : 15 rue des Halles, 75001 Paris, France
+        <br />
+        SIREN : 888 799 194 — SIRET : 888 799 194 00012
+        <br />
+        RCS Paris — Code APE : 62.02A (Conseil en systèmes et logiciels informatiques)
+        <br />
+        N° TVA intracommunautaire : FR96 888 799 194
         <br />
         Contact : <a href="mailto:contact@perspikapps.fr">contact@perspikapps.fr</a>
         <br />
-        Directeur de la publication : [À compléter]
-        <br />
-        Numéro SIREN / SIRET : [À compléter]
+        Directeur de la publication : le représentant légal d'ALAUDIDA
+      </p>
+      <p>
+        Perspikapps est une marque et un studio de développement logiciel opérés par ALAUDIDA.
       </p>
 
       <h2>Hébergement</h2>
       <p>
-        Le site est hébergé par <strong>Lovable</strong> sur l'infrastructure de Cloudflare, Inc.
-        (101 Townsend Street, San Francisco, CA 94107, États-Unis).
+        Le site est hébergé par <strong>Lovable</strong> sur l'infrastructure de{" "}
+        <strong>Cloudflare, Inc.</strong> — 101 Townsend Street, San Francisco, CA 94107,
+        États-Unis.
       </p>
 
       <h2>Propriété intellectuelle</h2>
       <p>
         L'ensemble des contenus présents sur ce site (textes, graphismes, logos, icônes, images)
-        est la propriété exclusive de Perspikapps, sauf mention contraire. Toute reproduction,
+        est la propriété exclusive d'ALAUDIDA, sauf mention contraire. Toute reproduction,
         représentation ou diffusion, totale ou partielle, est interdite sans autorisation écrite
         préalable.
       </p>
 
       <h2>Responsabilité</h2>
       <p>
-        Perspikapps s'efforce d'assurer l'exactitude et la mise à jour des informations diffusées
-        sur ce site, mais ne saurait garantir l'absence d'erreurs ou d'omissions. L'utilisation des
+        ALAUDIDA s'efforce d'assurer l'exactitude et la mise à jour des informations diffusées sur
+        ce site, mais ne saurait garantir l'absence d'erreurs ou d'omissions. L'utilisation des
         informations se fait sous la seule responsabilité de l'utilisateur.
       </p>
 

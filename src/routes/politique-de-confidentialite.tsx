@@ -27,7 +27,9 @@ function Privacy() {
 
       <h2>Responsable du traitement</h2>
       <p>
-        Perspikapps — <a href="mailto:contact@perspikapps.fr">contact@perspikapps.fr</a>.
+        Le responsable du traitement est <strong>ALAUDIDA</strong> (SAS), 15 rue des Halles,
+        75001 Paris, France — SIREN 888 799 194. Contact :{" "}
+        <a href="mailto:contact@perspikapps.fr">contact@perspikapps.fr</a>.
       </p>
 
       <h2>Données collectées</h2>
