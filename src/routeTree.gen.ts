@@ -10,11 +10,30 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as SitemapDotxmlRouteImport } from './routes/sitemap[.]xml'
+import { Route as PolitiqueDeConfidentialiteRouteImport } from './routes/politique-de-confidentialite'
+import { Route as PolitiqueCookiesRouteImport } from './routes/politique-cookies'
+import { Route as MentionsLegalesRouteImport } from './routes/mentions-legales'
 import { Route as IndexRouteImport } from './routes/index'
 
 const SitemapDotxmlRoute = SitemapDotxmlRouteImport.update({
   id: '/sitemap.xml',
   path: '/sitemap.xml',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const PolitiqueDeConfidentialiteRoute =
+  PolitiqueDeConfidentialiteRouteImport.update({
+    id: '/politique-de-confidentialite',
+    path: '/politique-de-confidentialite',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const PolitiqueCookiesRoute = PolitiqueCookiesRouteImport.update({
+  id: '/politique-cookies',
+  path: '/politique-cookies',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const MentionsLegalesRoute = MentionsLegalesRouteImport.update({
+  id: '/mentions-legales',
+  path: '/mentions-legales',
   getParentRoute: () => rootRouteImport,
 } as any)
 const IndexRoute = IndexRouteImport.update({
@@ -25,27 +44,55 @@ const IndexRoute = IndexRouteImport.update({
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/mentions-legales': typeof MentionsLegalesRoute
+  '/politique-cookies': typeof PolitiqueCookiesRoute
+  '/politique-de-confidentialite': typeof PolitiqueDeConfidentialiteRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/mentions-legales': typeof MentionsLegalesRoute
+  '/politique-cookies': typeof PolitiqueCookiesRoute
+  '/politique-de-confidentialite': typeof PolitiqueDeConfidentialiteRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/mentions-legales': typeof MentionsLegalesRoute
+  '/politique-cookies': typeof PolitiqueCookiesRoute
+  '/politique-de-confidentialite': typeof PolitiqueDeConfidentialiteRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/sitemap.xml'
+  fullPaths:
+    | '/'
+    | '/mentions-legales'
+    | '/politique-cookies'
+    | '/politique-de-confidentialite'
+    | '/sitemap.xml'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/sitemap.xml'
-  id: '__root__' | '/' | '/sitemap.xml'
+  to:
+    | '/'
+    | '/mentions-legales'
+    | '/politique-cookies'
+    | '/politique-de-confidentialite'
+    | '/sitemap.xml'
+  id:
+    | '__root__'
+    | '/'
+    | '/mentions-legales'
+    | '/politique-cookies'
+    | '/politique-de-confidentialite'
+    | '/sitemap.xml'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  MentionsLegalesRoute: typeof MentionsLegalesRoute
+  PolitiqueCookiesRoute: typeof PolitiqueCookiesRoute
+  PolitiqueDeConfidentialiteRoute: typeof PolitiqueDeConfidentialiteRoute
   SitemapDotxmlRoute: typeof SitemapDotxmlRoute
 }
 
@@ -56,6 +103,27 @@ declare module '@tanstack/react-router' {
       path: '/sitemap.xml'
       fullPath: '/sitemap.xml'
       preLoaderRoute: typeof SitemapDotxmlRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/politique-de-confidentialite': {
+      id: '/politique-de-confidentialite'
+      path: '/politique-de-confidentialite'
+      fullPath: '/politique-de-confidentialite'
+      preLoaderRoute: typeof PolitiqueDeConfidentialiteRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/politique-cookies': {
+      id: '/politique-cookies'
+      path: '/politique-cookies'
+      fullPath: '/politique-cookies'
+      preLoaderRoute: typeof PolitiqueCookiesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/mentions-legales': {
+      id: '/mentions-legales'
+      path: '/mentions-legales'
+      fullPath: '/mentions-legales'
+      preLoaderRoute: typeof MentionsLegalesRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/': {
@@ -70,18 +138,11 @@ declare module '@tanstack/react-router' {
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  MentionsLegalesRoute: MentionsLegalesRoute,
+  PolitiqueCookiesRoute: PolitiqueCookiesRoute,
+  PolitiqueDeConfidentialiteRoute: PolitiqueDeConfidentialiteRoute,
   SitemapDotxmlRoute: SitemapDotxmlRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
   ._addFileTypes<FileRouteTypes>()
-
-import type { getRouter } from './router.tsx'
-import type { startInstance } from './start.ts'
-declare module '@tanstack/react-start' {
-  interface Register {
-    ssr: true
-    router: Awaited<ReturnType<typeof getRouter>>
-    config: Awaited<ReturnType<typeof startInstance.getOptions>>
-  }
-}
