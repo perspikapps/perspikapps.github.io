@@ -1,26 +1,41 @@
 import { useEffect, useState } from "react";
 import { Link } from "@tanstack/react-router";
-
-const STORAGE_KEY = "perspikapps.cookie-consent";
+import { CONSENT_STORAGE_KEY, loadAnalytics, unloadAnalytics } from "@/lib/analytics";
 
 export function CookieBanner() {
   const [visible, setVisible] = useState(false);
 
   useEffect(() => {
     if (typeof window === "undefined") return;
+    let stored: string | null = null;
     try {
-      if (!localStorage.getItem(STORAGE_KEY)) setVisible(true);
+      stored = localStorage.getItem(CONSENT_STORAGE_KEY);
     } catch {
+      /* ignore */
+    }
+    if (!stored) {
       setVisible(true);
+      return;
+    }
+    try {
+      const parsed = JSON.parse(stored) as { value?: string };
+      if (parsed.value === "accepted") loadAnalytics();
+    } catch {
+      /* ignore malformed */
     }
   }, []);
 
   const decide = (value: "accepted" | "refused") => {
     try {
-      localStorage.setItem(STORAGE_KEY, JSON.stringify({ value, date: new Date().toISOString() }));
+      localStorage.setItem(
+        CONSENT_STORAGE_KEY,
+        JSON.stringify({ value, date: new Date().toISOString() }),
+      );
     } catch {
       /* ignore */
     }
+    if (value === "accepted") loadAnalytics();
+    else unloadAnalytics();
     setVisible(false);
   };
 
@@ -36,8 +51,9 @@ export function CookieBanner() {
       <div className="rounded-lg border border-[var(--border-subtle)] bg-card p-5 shadow-lg">
         <h2 className="text-sm font-semibold text-[var(--text-heading)]">Cookies</h2>
         <p className="mt-2 text-sm text-[var(--text-body)]">
-          Nous utilisons uniquement les cookies strictement nécessaires au fonctionnement du site.
-          Aucun cookie de mesure d'audience ni de publicité n'est déposé sans votre accord.{" "}
+          Nous utilisons des cookies strictement nécessaires au fonctionnement du site, ainsi
+          qu'un service de mesure d'audience <strong>Google Analytics</strong> pour comprendre
+          l'usage anonyme du site. Ce dernier n'est activé qu'avec votre accord.{" "}
           <Link to="/politique-cookies" className="underline hover:text-[var(--brand-primary)]">
             En savoir plus
           </Link>
