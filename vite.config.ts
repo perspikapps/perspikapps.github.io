@@ -6,8 +6,14 @@
 // You can pass additional config via defineConfig({ vite: { ... }, etc... }) if needed.
 import { defineConfig } from "@lovable.dev/vite-tanstack-config";
 
+// GitHub Pages is static: build without Nitro and prerender to dist/client.
+// Lovable's publish keeps the default Cloudflare/Nitro target.
+const pages = process.env.GITHUB_PAGES === "true";
+
 export default defineConfig({
+  ...(pages && { nitro: false }),
   tanstackStart: {
+    ...(pages && { prerender: { enabled: true, crawlLinks: true } }),
     // Redirect TanStack Start's bundled server entry to src/server.ts (our SSR error wrapper).
     // nitro/vite builds from this
     server: { entry: "server" },
