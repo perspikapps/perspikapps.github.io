@@ -87,8 +87,8 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { name: "twitter:card", content: "summary_large_image" },
       { name: "twitter:title", content: "Perspikapps — Pragmatic solutions for platforms that ship" },
       { name: "twitter:description", content: "Perspikapps is a software development studio building Taskadabra, Deskale and SynoPkgHub, and open-sourcing the deployment tooling behind them." },
-      { property: "og:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/b1f49076-6892-4d2c-8356-44bfa27e22f2/id-preview-20d49211--db80ed34-3aa7-41f9-a69e-831ca71899f4.lovable.app-1783668093208.png" },
-      { name: "twitter:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/b1f49076-6892-4d2c-8356-44bfa27e22f2/id-preview-20d49211--db80ed34-3aa7-41f9-a69e-831ca71899f4.lovable.app-1783668093208.png" },
+      { property: "og:image", content: "https://perspikapps.fr/og.png" },
+      { name: "twitter:image", content: "https://perspikapps.fr/og.png" },
     ],
     links: [
       { rel: "stylesheet", href: appCss },
